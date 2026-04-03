@@ -44,3 +44,6 @@ subagents:
 output:
   type: stdout
   controller_direct: true
+
+compact:
+  max_tokens: 1000000
