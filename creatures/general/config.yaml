@@ -2,7 +2,7 @@ name: general
 version: "1.0"
 
 controller:
-  model: "${OPENROUTER_MODEL:google/gemini-3-flash-preview}"
+  model: "${OPENROUTER_MODEL:google/gemini-3.1-pro-preview}"
   temperature: 0.5
   api_key_env: OPENROUTER_API_KEY
   base_url: https://openrouter.ai/api/v1
