@@ -31,6 +31,8 @@ tools:
   - { name: list_triggers, type: builtin }
   - { name: create_trigger, type: builtin }
   - { name: search_memory, type: builtin }
+  - { name: web_fetch, type: builtin }
+  - { name: web_search, type: builtin }
 
 subagents:
   - { name: explore, type: builtin }
