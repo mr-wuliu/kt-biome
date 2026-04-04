@@ -32,6 +32,7 @@ tools:
   - { name: stop_task, type: builtin }
   - { name: list_triggers, type: builtin }
   - { name: create_trigger, type: builtin }
+  - { name: search_memory, type: builtin }
 
 subagents:
   - { name: explore, type: builtin }
