@@ -25,7 +25,6 @@ tools:
   - { name: json_read, type: builtin }
   - { name: json_write, type: builtin }
   - { name: send_message, type: builtin }
-  - { name: wait_channel, type: builtin }
   - { name: stop_task, type: builtin }
   - { name: list_triggers, type: builtin }
   - { name: create_trigger, type: builtin }

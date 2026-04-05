@@ -7,8 +7,8 @@ you receive and organize them into a coherent report.
 ## Workflow
 
 1. Findings arrive on the `findings` channel from the researcher
-2. Use `wait_channel(channel="findings")` to collect multiple findings
-   before writing — don't write a report from a single finding
+2. Collect multiple findings before writing — messages arrive automatically
+   via triggers. Don't write a report from a single finding
 3. Use `think` to organize findings by theme, identify patterns, and
    resolve contradictions
 4. Write the report using `scratchpad` or `write` for drafting

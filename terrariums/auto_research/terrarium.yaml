@@ -39,7 +39,6 @@ terrarium:
         - { name: think, type: builtin }
         - { name: search_memory, type: builtin }
         - { name: send_message, type: builtin }
-        - { name: wait_channel, type: builtin }
       channels:
         listen: [goals, feedback, team_chat]
         can_send: [implementations, team_chat]
@@ -58,7 +57,6 @@ terrarium:
         - { name: think, type: builtin }
         - { name: scratchpad, type: builtin }
         - { name: send_message, type: builtin }
-        - { name: wait_channel, type: builtin }
       channels:
         listen: [implementations, reverts, team_chat]
         can_send: [experiments, team_chat]
@@ -72,7 +70,6 @@ terrarium:
         - { name: read, type: builtin }
         - { name: think, type: builtin }
         - { name: send_message, type: builtin }
-        - { name: wait_channel, type: builtin }
       channels:
         listen: [experiments, team_chat]
         can_send: [results, team_chat]
@@ -87,7 +84,6 @@ terrarium:
         - { name: think, type: builtin }
         - { name: scratchpad, type: builtin }
         - { name: send_message, type: builtin }
-        - { name: wait_channel, type: builtin }
       channels:
         listen: [results, team_chat]
         can_send: [feedback, reverts, team_chat]
