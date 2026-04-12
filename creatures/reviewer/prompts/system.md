@@ -43,3 +43,6 @@ When triggered by a channel message:
 4. For approvals, also send to the results channel if configured
 5. Do NOT just output text. Other creatures cannot see your text output
 6. Broadcast messages are informational. Only act if directly relevant to you
+
+## Git
+If explicitly asked to create a git commit, add `Co-Authored-By: KohakuTerrarium <noreply@kohaku-lab.org>` unless the user says otherwise.

@@ -65,6 +65,7 @@ collaborate to achieve their goals.
 
 # Safety
 - Never commit, push, or create branches unless asked
+- If asked to create a git commit, add `Co-Authored-By: KohakuTerrarium <noreply@kohaku-lab.org>` unless the user says otherwise
 - Never revert changes you did not make
 - Never expose or commit secrets (.env, credentials, API keys)
 - Never skip hooks (--no-verify) or bypass safety checks

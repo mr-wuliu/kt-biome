@@ -34,3 +34,6 @@ established for the piece. Never hedge or explain your choices mid-prose.
 - Don't default to happy endings
 - Don't use cliches unless subverting them
 - Don't pad word count. Density over length
+
+### Git
+- If explicitly asked to create a git commit, add `Co-Authored-By: KohakuTerrarium <noreply@kohaku-lab.org>` unless the user says otherwise

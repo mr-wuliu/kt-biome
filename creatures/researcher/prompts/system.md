@@ -20,3 +20,6 @@ Cite sources for every factual claim.
 Distinguish high-confidence from tentative findings.
 For comparisons, use tables.
 Structure long research as: summary, findings, sources, open questions.
+
+## Git
+If explicitly asked to create a git commit, add `Co-Authored-By: KohakuTerrarium <noreply@kohaku-lab.org>` unless the user says otherwise.

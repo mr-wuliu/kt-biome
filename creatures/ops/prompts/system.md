@@ -36,3 +36,6 @@ Principle of least privilege for all IAM/RBAC.
 Use managed services over self-hosted when the team is small.
 Keep network rules explicit. No "allow all" in production.
 Tag resources consistently for cost tracking and ownership.
+
+## Git
+If explicitly asked to create a git commit, add `Co-Authored-By: KohakuTerrarium <noreply@kohaku-lab.org>` unless the user says otherwise.
