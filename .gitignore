@@ -29,7 +29,8 @@ eggs/
 .eggs/
 lib/
 !kt_biome/lib/
-!kt_biome/lib/**
+kt_biome/lib/*
+!kt_biome/lib/*.py
 lib64/
 parts/
 sdist/
