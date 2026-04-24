@@ -9,5 +9,16 @@ description = "Default creatures, terrariums, plugins, tools, I/O, and triggers 
 requires-python = ">=3.12"
 dependencies = []
 
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pyyaml",
+]
+
 [tool.setuptools.packages.find]
 include = ["kt_biome*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/unit"]
+asyncio_mode = "auto"
