@@ -3,6 +3,11 @@
 Uses post_llm_call hook to observe every LLM response. Accumulates
 token counts and estimated cost. Persists to session state.
 
+If ``budget_usd`` is set, contributes a termination checker (cluster
+C.2) that stops the run as soon as the running total exceeds the
+budget — the reason is surfaced in session metadata so the user can
+see exactly which plugin ended the session.
+
 Usage:
     plugins:
       - name: cost_tracker
@@ -12,11 +17,13 @@ Usage:
         options:
           budget_usd: 5.0
           warn_at: 0.8
+          stop_at_budget: true   # default; set false to only warn
 """
 
 import time
-from typing import Any
+from typing import Any, Callable
 
+from kohakuterrarium.core.termination import TerminationDecision
 from kohakuterrarium.modules.plugin.base import BasePlugin, PluginContext
 from kohakuterrarium.utils.logging import get_logger
 
@@ -42,6 +49,7 @@ class CostTrackerPlugin(BasePlugin):
         opts = options or {}
         self._budget = float(opts.get("budget_usd", 0))
         self._warn_at = float(opts.get("warn_at", 0.8))
+        self._stop_at_budget = bool(opts.get("stop_at_budget", True))
         self._pricing = {**_DEFAULT_PRICING, **opts.get("pricing", {})}
         self._total_cost = 0.0
         self._total_input = 0
@@ -106,3 +114,25 @@ class CostTrackerPlugin(BasePlugin):
             output_tokens=self._total_output,
             runtime=f"{int(elapsed // 60)}m",
         )
+
+    def contribute_termination_check(self) -> Callable[[Any], Any] | None:
+        """Stop the run when the running cost meets or exceeds ``budget_usd``.
+
+        Returns ``None`` if no budget is configured or ``stop_at_budget``
+        is off — in that case cost_tracker stays warn-only.
+        """
+        if self._budget <= 0 or not self._stop_at_budget:
+            return None
+
+        def _checker(_ctx: Any) -> TerminationDecision:
+            if self._total_cost >= self._budget:
+                return TerminationDecision(
+                    should_stop=True,
+                    reason=(
+                        f"cost_tracker budget exhausted: "
+                        f"${self._total_cost:.4f} / ${self._budget:.2f}"
+                    ),
+                )
+            return TerminationDecision(should_stop=False)
+
+        return _checker

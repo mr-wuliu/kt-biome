@@ -71,6 +71,11 @@ plugins:
     class: MultimodalGuardPlugin
     description: "Rewrite multimodal LLM input into text-only placeholders before model calls"
 
+  - name: termination_goal
+    module: kt_biome.plugins.termination_goal
+    class: TerminationGoalPlugin
+    description: "Vote termination when a scratchpad flag (default goal_achieved) is truthy. Demonstrates pluggable termination (cluster C.2)."
+
   - name: context_files
     module: kt_biome.plugins.context_files
     class: ContextFilesPlugin
