@@ -9,6 +9,11 @@ creatures:
     path: creatures/general
     description: "Base creature: 22 tools, 6 sub-agents, core personality"
 
+  - name: bounded_general
+    path: creatures/bounded_general
+    description: "general with a 50-turn shared iteration budget (H.1 extension-point demo)"
+    base: general
+
   - name: swe
     path: creatures/swe
     description: "Software engineering specialist"
