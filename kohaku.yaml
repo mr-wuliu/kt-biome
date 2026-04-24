@@ -128,6 +128,17 @@ tools:
     class: SkillManageTool
     description: "Create/patch/view reusable procedural skills as agentskills.io-compatible SKILL.md bundles."
 
+  # Alternative bash backends — proposal §4.9 / X9.
+  - name: bash_docker
+    module: kt_biome.tools.bash_docker
+    class: DockerBashTool
+    description: "bash-shaped tool that executes every command inside a long-lived Docker container (optional docker-py dep)."
+
+  - name: bash_ssh
+    module: kt_biome.tools.bash_ssh
+    class: SshBashTool
+    description: "bash-shaped tool that executes every command on a remote host over a pooled SSH session (optional paramiko dep)."
+
 io:
   - name: discord_input
     module: kt_biome.io.discord

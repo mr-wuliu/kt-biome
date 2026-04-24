@@ -33,6 +33,11 @@ class DatabaseTool(BaseTool):
     """Execute SQL queries against a SQLite database."""
 
     needs_context = True
+    # SQLite write queries serialize at the file level; running two tool
+    # calls in parallel against the same DB risks "database is locked"
+    # errors. Even for read-only queries the tool keeps a single
+    # persistent connection, so concurrent use is a footgun.
+    is_concurrency_safe = False
 
     def __init__(self, config=None, options: dict[str, Any] | None = None):
         super().__init__(config)
