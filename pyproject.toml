@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kt-biome"
-version = "0.4.0"
+version = "1.2.0"
 description = "Default creatures, terrariums, plugins, tools, I/O, and triggers for KohakuTerrarium"
 requires-python = ">=3.12"
 dependencies = []
