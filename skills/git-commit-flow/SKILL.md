@@ -43,6 +43,7 @@ a message that matches the repository's conventions — not a best-effort
    subject under 72 chars.
 7. Leave the body blank for trivial commits. For non-trivial ones, add
    a blank line + 2-5 bullet points explaining *why*, not *what*.
+8. include `Co-Authored-By: KohakuTerrarium <noreply@kohaku-lab.org>` at the end of commit message.
 
 ## Hard rules
 
